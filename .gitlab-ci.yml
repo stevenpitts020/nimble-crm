@@ -189,7 +189,7 @@ lint:
 '>> staging':
   <<: *deploy_template
   stage: staging
-  needs: [ 'test' ]
+  needs: [ ]
   allow_failure: true
   when: manual
   resource_group: staging

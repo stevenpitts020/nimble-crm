@@ -2,7 +2,7 @@ import AuthService from './AuthService'
 import CoreAPI from './CoreAPI'
 
 class AccountingTermsService extends CoreAPI {
-  public async categories() {
+  public async taxonomy() {
     this.setAuthenticationHeader(AuthService.getAccessToken()!)
     return await this.getRequest('/accounting-terms')
   }

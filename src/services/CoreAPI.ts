@@ -76,6 +76,18 @@ class CoreAPI {
     return await response.data
   }
 
+  public async deleteRequest(url: string): Promise<any> {
+    const config = {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    }
+    const requestURL = `${Config.coreAPI}${url}`
+    const response = await axios.delete(requestURL, { ...config })
+    return response.status >= 200 && response.status < 300
+  }
+
   /**
    * API Request handler
    * @param url - api endpoint
