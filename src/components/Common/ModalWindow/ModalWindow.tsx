@@ -9,7 +9,6 @@ interface IModalWindow {
   afterClose?: () => void
   onCancel?: () => void
   closable?: boolean
-  width?: string | number
 }
 
 export const ModalWindow: React.FC<IModalWindow> = (props: IModalWindow) => {
@@ -22,7 +21,7 @@ export const ModalWindow: React.FC<IModalWindow> = (props: IModalWindow) => {
       centered={true}
       visible={props.visible}
       footer={null}
-      width={props.width || '25%'}
+      width="25%"
       className="ni-modal no-padding"
       afterClose={props.afterClose}
       onCancel={props.onCancel}

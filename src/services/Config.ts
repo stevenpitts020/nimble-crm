@@ -10,7 +10,6 @@ class Config {
   public readonly releaseVersion: string | undefined
   public readonly context: string
   public readonly allowPassword: boolean
-  public readonly mapboxAccessToken: string | undefined
 
   constructor() {
     this.coreAPI =
@@ -32,7 +31,6 @@ class Config {
     this.local =
       this.env === 'development' &&
       (this.coreAPI.includes('localhost') || this.coreAPI.includes('127.0.0.1'))
-    this.mapboxAccessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
   }
 
   public getContext() {

@@ -1,46 +1,49 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import React, { useEffect, useState } from 'react'
-import { Analysis, GeoEnrichment, PeopleSearch, DocumentRequest, WorkflowBuilder } from '../../components'
-import { Tabs } from 'antd'
-import { useHistory } from 'react-router-dom'
+import _ from 'lodash'
+import React, { useState } from 'react'
+import { Analysis, Box, GeoEnrichment } from '../../components'
+import { Button, Typography } from 'antd'
 
-const { TabPane } = Tabs
+const { Title } = Typography
 
 const Labs: React.FC = (props: any) => {
-  const history = useHistory()
-
-  const activeTab = () => {
-    const _tab = history.location.hash
-    return _tab ? _tab.substring(1) : 'financial-analysis'
+  const tabs = {
+    analysis: { title: 'Financial Analysis', render: () => <Analysis /> },
+    geoEnrich: { title: 'Geo Enrichment', render: () => <GeoEnrichment /> },
   }
 
-  useEffect(() => setTab(activeTab()), [history.location.hash])
+  const [tab, setTab] = useState<object>(tabs.analysis)
 
-  const [tab, setTab] = useState<object>(activeTab())
-
-  const onTabClick = (key: string) =>
-    history.push(`${history.location.pathname}#${key}`)
+  const onTabClick = (key: string) => () => {
+    if (key && tab.key !== key) setTab(tabs[key])
+  }
 
   return (
-    <Tabs size="large" defaultActiveKey={tab} onTabClick={onTabClick}>
-      <TabPane tab="FinAnalysis" key="financial-analysis">
-        <Analysis />
-      </TabPane>
-      <TabPane tab="GeoEnrich" key="geo-enrichment">
-        <GeoEnrichment />
-      </TabPane>
-      <TabPane tab="PeopleSearch" key="people-search">
-        <PeopleSearch />
-      </TabPane>
-      <TabPane tab="Workflow" key="workflow">
-        <DocumentRequest />
-      </TabPane>
-      <TabPane tab="Workflow Builder" key="workflow-builder">
-        <WorkflowBuilder />
-      </TabPane>
-    </Tabs>
+    <div className="labs-page">
+      <div
+        className="tabs"
+        style={{
+          marginBottom: '2em',
+          paddingBottom: '2em',
+          borderBottom: '1px solid #CCC',
+        }}
+      >
+        {_.map(tabs, (t, key) => (
+          <Button
+            key={`${key}-tab`}
+            value={key}
+            onClick={onTabClick(key)}
+            style={{ marginRight: '2em' }}
+          >
+            {t.title}
+          </Button>
+        ))}
+      </div>
+
+      <Box>{tab.render()}</Box>
+    </div>
   )
 }
 

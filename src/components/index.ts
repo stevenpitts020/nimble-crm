@@ -95,11 +95,6 @@ export * from './Product/ProductTable/ProductTable'
 /* Nimble Data Service */
 export * from './GMap/GMap'
 export * from './Enrichment/GeoEnrichment/GeoEnrichment'
-export * from './Enrichment/PeopleSearch/PeopleSearch'
 export * from './Analysis/Analysis'
 export * from './Analysis/Statements/Canonical'
 export * from './Analysis/Statements/LineItems'
-
-/* Workflow */
-export * from './Workflow/Builder/WorkflowBuilder'
-export * from './Workflow/DocumentRequest/DocumentRequest'

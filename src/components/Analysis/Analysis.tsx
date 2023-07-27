@@ -11,7 +11,7 @@ import Config from '../../services/Config'
 import FileAnalysisService from '../../services/FileAnalysisService'
 import AccountingTermsService from '../../services/AccountingTermsService'
 
-import { Spin, Table, Tabs, TreeSelect } from 'antd'
+import { Spin, Table, Tabs } from 'antd'
 
 const { TabPane } = Tabs
 
@@ -28,6 +28,7 @@ import FilepondPluginImageTransform from 'filepond-plugin-image-transform'
 import FilepondPluginFileValidateSize from 'filepond-plugin-file-validate-size'
 
 import { FilePondErrorDescription, FilePondFile } from 'filepond'
+import Select from 'react-select'
 import SplitPane from 'react-split-pane'
 import {
   FileDoneOutlined,
@@ -60,26 +61,19 @@ export const Analysis: React.FC = (props: any) => {
   const [columns, setColumns] = useState<IHeader[]>([])
   const [dataSource, setDataSource] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
-  const [taxonomy, setTaxonomy] = useState<>([])
-  const [rowData, setRowData] = useState<>([])
-  const [categoryChange, setCategoryChange] = useState<>()
+  const [categories, setCategories] = useState<string>([])
+  const [subcategories, setSubcategories] = useState<string>([])
 
   React.useEffect(() => {
-    AccountingTermsService.taxonomy().then(res => setTaxonomy(res))
+    AccountingTermsService.categories().then(res => {
+      setCategories(
+        _.map(_.get(res, 'categories.aggregates', []), cat => cat.l0)
+      )
+      setSubcategories(
+        _.map(_.get(res, 'subcategories.aggregates', []), sub => sub.l1)
+      )
+    })
   }, [])
-
-  React.useEffect(() => {
-    if (!categoryChange || _.isEmpty(categoryChange)) return
-    const _rowData = _.cloneDeep(rowData)
-    _rowData[categoryChange.row].category = categoryChange.categoryId
-    setRowData(_rowData)
-  }, [categoryChange])
-
-  const onCategoryChange = (row: number, col: number) => (
-    categoryId: string
-  ) => {
-    setCategoryChange({ row, col, categoryId })
-  }
 
   const fileProcessed = (
     err: FilePondErrorDescription | null,
@@ -91,8 +85,8 @@ export const Analysis: React.FC = (props: any) => {
       FileAnalysisService.financialStatement(file.serverId)
         .then(res => {
           const rows = res.table.rows
-          const header = res.table.header
-          processDataSource(rows, processColumns(header))
+          const headers = rows.shift()
+          processDataSource(rows, processColumns(headers))
         })
         .finally(() => setLoading(false))
     }
@@ -101,21 +95,15 @@ export const Analysis: React.FC = (props: any) => {
   const processDataSource = (rows: [][], headers: IHeader[]) => {
     if (!rows || _.isEmpty(rows)) return setDataSource([])
 
-    setRowData(
-      rows.map(_row => {
-        return { ..._row, category: _row.category._id }
-      })
-    )
-
-    // TODO: have data source update on row changes
     let idx = 0
     setDataSource(
       rows.map(_row => {
-        const row = { attrs: _row.attrs, key: _.toString(idx++) }
+        const row = { key: _.toString(idx++) } as any
 
         const cells = [
           _row.cells[0],
-          { _: _row.category._id },
+          { _: _row.l0 },
+          { _: _row.l1 },
           ..._row.cells.slice(1),
         ]
 
@@ -136,13 +124,18 @@ export const Analysis: React.FC = (props: any) => {
     }
 
     const cells = [
-      header[0],
+      header.cells[0],
       {
-        _: 'category',
+        _: 'l0',
         txt: 'Category',
-        select: true,
+        select: 'l0',
       },
-      ...header.slice(1),
+      {
+        _: 'l1',
+        txt: 'Subcategory',
+        select: 'l1',
+      },
+      ...header.cells.slice(1),
     ]
 
     let idx = 0
@@ -156,28 +149,28 @@ export const Analysis: React.FC = (props: any) => {
         key,
       }
 
-      col.render = (text, row, rowNum) => {
-        if (_.get(row, ['attrs', 'isAggregate'], false)) {
-          return <div className="disabled-text">{cell.select ? '' : text}</div>
-        }
+      const select = cell.select
 
-        if (cell.select)
+      if (select)
+        col.render = (text, row, rowNum) => {
+          const options = (select === 'l0' ? categories : subcategories).map(
+            l0 => {
+              return { value: l0, label: l0 }
+            }
+          )
+
           return (
             <div style={{ minWidth: 150 }}>
-              <TreeSelect
-                key={Math.random()}
-                style={{ width: '100%' }}
-                dropdownStyle={{ overflow: 'auto' }}
-                treeData={taxonomy}
-                onChange={onCategoryChange(rowNum, colNum)}
-                treeDefaultExpandAll={true}
-                defaultValue={text}
+              <Select
+                key={`${idx}-${text}`}
+                title={cell.select.i}
+                isMulti={false}
+                options={options}
+                defaultValue={{ value: text, label: text }}
               />
             </div>
           )
-
-        return text
-      }
+        }
 
       return col
     })
@@ -226,10 +219,9 @@ export const Analysis: React.FC = (props: any) => {
               key="fs-tbl"
               tab={
                 <>
-                  <Spin spinning={loading} indicator={loadingIcon}>
-                    <TableOutlined />
-                    Table
-                  </Spin>
+                  <Spin spinning={loading} indicator={loadingIcon} />
+                  <TableOutlined hidden={loading} />
+                  Table
                 </>
               }
             >
@@ -245,10 +237,9 @@ export const Analysis: React.FC = (props: any) => {
               key="fs-canon"
               tab={
                 <>
-                  <Spin spinning={loading} indicator={loadingIcon}>
-                    <FileDoneOutlined />
-                    Statement
-                  </Spin>
+                  <Spin spinning={loading} indicator={loadingIcon} />
+                  <FileDoneOutlined hidden={loading} />
+                  Statement
                 </>
               }
             >

@@ -19,16 +19,8 @@
   "rules": {
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "quotemark": [
-      true,
-      "single",
-      "jsx-double"
-    ],
-    "semicolon": [
-      true,
-      "never",
-      "ignore-interfaces"
-    ],
+    "quotemark": [true, "single", "jsx-double"],
+    "semicolon":  [true, "never", "ignore-interfaces"],
     "trailing-comma": [
       true,
       {
@@ -42,7 +34,6 @@
       }
     ],
     "prettier": true,
-    "interface-name": false,
-    "variable-name": false
+    "interface-name": false
   }
 }

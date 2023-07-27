@@ -505,29 +505,3 @@ export interface IBaseRate {
   summary: string
   value: number
 }
-
-export interface ISearchData {
-  id?: string
-  name: string
-  description?: string
-  query: any
-  filters: any[]
-}
-
-export interface IDocumentRequestActor {
-  name: string
-  email: string
-}
-
-export interface IDocumentRequestEntity {
-  type: string
-  subtype?: string
-  name: string
-}
-
-export interface IDocumentRequest {
-  product: IDocumentRequestEntity
-  document: IDocumentRequestEntity
-  sender: IDocumentRequestActor
-  recipient: IDocumentRequestActor
-}

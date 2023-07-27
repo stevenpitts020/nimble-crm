@@ -31,5 +31,3 @@ chart/production.yaml
 
 package-lock.json
 junit.xml
-/public/mapbox/
-/public/pdfjs/

@@ -11,7 +11,6 @@ import { WarningOutlined } from '@ant-design/icons'
 
 import CANON from './CANON'
 import { LineItems } from './LineItems'
-import AccountingTermsService from '../../../services/AccountingTermsService'
 
 export interface ICanonicalProps {
   headers: { name?: ReactNode; values: [] }
@@ -28,11 +27,6 @@ export const Canonical: React.FC<ICanonicalProps> = (
   )
 
   const [aggregates, setAggregates] = useState({})
-  const [taxonomy, setTaxonomy] = useState([])
-
-  React.useEffect(() => {
-    AccountingTermsService.taxonomy().then(res => setTaxonomy(res))
-  }, [])
 
   useEffect(() => {
     const sums = {}
