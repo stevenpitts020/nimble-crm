@@ -1,0 +1,42 @@
+
+// Hi, Mark
+.ni-user-greeting
+  margin-bottom: 93px
+  margin-top: 53px
+
+  &--say.ant-typography
+    color: $text-color-secondary
+    font-weight: 500
+    @include font-size(16px, 24px)
+
+  &--name
+    display: block
+    color: $text-color
+    @include font-size(32px, 32px)
+    font-weight: 600
+
+
+.ni-sidebar
+  border-right: 1px solid $veryLightGray
+  &:not(.ant-layout-sider-collapsed)
+    padding-left: 45px
+    padding-top: 45px
+    -webkit-transition: padding 0.2s linear
+    -moz-transition: padding 0.2s linear
+    transition: padding 0.2s linear
+
+  .logo
+    font-size: 54px
+    color: $lightGray
+    fill: $lightGray
+
+  .ant-menu-vertical
+    border-right: 0px
+    li.ant-menu-item
+      padding: 0 0
+      .anticon
+        margin-right: 22px
+        font-size: 16px
+      span
+        letter-spacing: 0.05em
+        font-weight: 500

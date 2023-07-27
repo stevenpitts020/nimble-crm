@@ -1,0 +1,33 @@
+.ni-login-form
+  min-width: 344px
+  // overwrite this
+  > .ni-button
+    min-width: 104px
+
+span.ni-institution-logo,
+span.ni-institution-avatar
+  color: $black
+  background-color: #F9FAFC
+.ni-institution-logo
+  background-color: #F9FAFC
+  object-fit: contain
+  &.placeholder 
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    width: 104px
+    height: 104px
+  &.to-white
+    background-color: transparent
+
+// TODO create a spacer component
+.request-pass-form--spacer,
+.recover-pass-form--spacer
+  margin-top: 70px
+  margin-bottom: 112px
+  padding-bottom: 0px
+
+.recover-pass-form--spacer
+  margin-top: 30px
+  margin-bottom: 60px

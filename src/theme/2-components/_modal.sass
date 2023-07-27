@@ -1,0 +1,37 @@
+.ni-modal
+  // title in prospect modal
+  &--title
+    text-align: center
+    margin-bottom: spacer(8)
+
+    h1.ant-typography,
+    h2.ant-typography,
+    h3.ant-typography,
+      margin: 0
+      letter-spacing: -0.02em
+
+  // this is for the success screen in the prospect modal
+  &--confirmed
+    text-align: center
+    &--icon
+      margin-bottom: spacer(8)
+    &--action.ant-typography
+      @include font-size(56px, 56px)
+      margin-bottom: spacer(14)
+
+  &.no-padding
+    .ant-modal-body
+      padding: 0
+
+// reusable title and introduction for modals
+.ni-modal-introduction
+  border-top-left-radius: $border-radius-base
+  border-top-right-radius: $border-radius-base
+  text-align: center
+  padding: 40px 60px
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+  background: rgba(229, 233, 242, 0.3)
+
+// reusable class for padding in modals
+.ant-form.ni-modal-form-padded
+  padding: $padding-xl $padding-xl

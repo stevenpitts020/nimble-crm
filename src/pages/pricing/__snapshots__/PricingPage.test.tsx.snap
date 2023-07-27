@@ -1,0 +1,1002 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pricing Page /> matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ni-box ni-col-flex ni-section-header--clients"
+    data-testid="box"
+  >
+    <h3
+      class="ant-typography ni-section-header--title"
+    >
+      <span
+        class="ant-typography ni-section-header--subtitle"
+      >
+         
+      </span>
+      Pricing
+    </h3>
+    <div
+      class="ni-notification-badge"
+    >
+      <button
+        class="ant-btn ant-btn-link ant-btn-circle ant-btn-sm ant-btn-block"
+        type="button"
+      >
+        <span
+          class="ant-badge"
+        >
+          <span
+            class="anticon"
+            role="img"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              viewBox="0 0 22 22"
+              width="1em"
+            >
+              <path
+                d="M17.2113 7.27086c0-1.39476-.6045-2.7324-1.6804-3.71864-1.0759-.98625-2.5351-1.54032-4.0567-1.54032-1.52154 0-2.98078.55407-4.05668 1.54032-1.07591.98624-1.68034 2.32388-1.68034 3.71864 0 6.13544-2.86853 7.88844-2.86853 7.88844H20.0798s-2.8685-1.753-2.8685-7.88844zM13.1282 18.6653c-.1681.2656-.4094.4861-.6997.6394s-.6195.234-.9545.234c-.335 0-.6642-.0807-.9545-.234-.2903-.1533-.53157-.3738-.69968-.6394"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="ant-tabs ant-tabs-top ant-tabs-large"
+  >
+    <div
+      class="ant-tabs-nav"
+      role="tablist"
+    >
+      <div
+        class="ant-tabs-nav-wrap"
+      >
+        <div
+          class="ant-tabs-nav-list"
+          style="transform: translate(0px, 0px);"
+        >
+          <div
+            class="ant-tabs-tab ant-tabs-tab-active"
+          >
+            <div
+              aria-controls="rc-tabs-test-panel-1"
+              aria-selected="true"
+              class="ant-tabs-tab-btn"
+              id="rc-tabs-test-tab-1"
+              role="tab"
+              tabindex="0"
+            >
+              Deposits
+            </div>
+          </div>
+          <div
+            class="ant-tabs-tab"
+          >
+            <div
+              aria-controls="rc-tabs-test-panel-2"
+              aria-selected="false"
+              class="ant-tabs-tab-btn"
+              id="rc-tabs-test-tab-2"
+              role="tab"
+              tabindex="0"
+            >
+              Consumer
+            </div>
+          </div>
+          <div
+            class="ant-tabs-tab"
+          >
+            <div
+              aria-controls="rc-tabs-test-panel-3"
+              aria-selected="false"
+              class="ant-tabs-tab-btn"
+              id="rc-tabs-test-tab-3"
+              role="tab"
+              tabindex="0"
+            >
+              Mortage
+            </div>
+          </div>
+          <div
+            class="ant-tabs-tab"
+          >
+            <div
+              aria-controls="rc-tabs-test-panel-4"
+              aria-selected="false"
+              class="ant-tabs-tab-btn"
+              id="rc-tabs-test-tab-4"
+              role="tab"
+              tabindex="0"
+            >
+              HELOC
+            </div>
+          </div>
+          <div
+            class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-tabs-nav-operations ant-tabs-nav-operations-hidden"
+      >
+        <button
+          aria-controls="rc-tabs-test-more-popup"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-hidden="true"
+          class="ant-tabs-nav-more"
+          id="rc-tabs-test-more"
+          style="visibility: hidden; order: 1;"
+          tabindex="-1"
+          type="button"
+        >
+          <span
+            aria-label="ellipsis"
+            class="anticon anticon-ellipsis"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              class=""
+              data-icon="ellipsis"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="ant-tabs-extra-content"
+      >
+        <div>
+          <button
+            class="ant-btn ant-btn-primary ant-btn-round ant-btn-background-ghost"
+            type="button"
+          >
+            <span>
+              Import Products
+            </span>
+          </button>
+           
+          <button
+            class="ant-btn ant-btn-primary ant-btn-round"
+            type="button"
+          >
+            <span>
+              New Product
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-tabs-content-holder"
+    >
+      <div
+        class="ant-tabs-content ant-tabs-content-top"
+      >
+        <div
+          aria-hidden="false"
+          aria-labelledby="rc-tabs-test-tab-1"
+          class="ant-tabs-tabpane ant-tabs-tabpane-active"
+          id="rc-tabs-test-panel-1"
+          role="tabpanel"
+          tabindex="0"
+        >
+          <h4
+            class="ant-typography ant-typography-secondary ni-section-break"
+            style="margin-top: 0px;"
+          >
+            Checking
+          </h4>
+          <div
+            class="ant-card ant-card-small ni-table-prospects"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-table-wrapper"
+              >
+                <div
+                  class="ant-spin-nested-loading"
+                >
+                  <div
+                    class="ant-spin-container"
+                  >
+                    <div
+                      class="ant-table"
+                    >
+                      <div
+                        class="ant-table-container"
+                      >
+                        <div
+                          class="ant-table-content"
+                        >
+                          <table
+                            style="table-layout: auto;"
+                          >
+                            <colgroup />
+                            <thead
+                              class="ant-table-thead"
+                            >
+                              <tr>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                   
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Hedge Rate
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  BSP
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Rate
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Offering
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Amount
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Term
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Expiration
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Fees
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Recurrence
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Cross-sell
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  key
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody
+                              class="ant-table-tbody"
+                            >
+                              <tr
+                                class="ant-table-row ant-table-row-level-0"
+                                data-row-key="0"
+                              >
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <div
+                                    class="u-align-left"
+                                  >
+                                    <span
+                                      class="ant-typography h5"
+                                    >
+                                      <strong />
+                                    </span>
+                                    <div>
+                                      <span
+                                        class="ant-typography h5 ni-color-light-teal"
+                                      >
+                                        <strong>
+                                          #3
+                                        </strong>
+                                      </span>
+                                       
+                                      <span
+                                        class="ant-typography ant-typography-secondary"
+                                      />
+                                    </div>
+                                  </div>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <div
+                                    class="u-align-left"
+                                  >
+                                    <span
+                                      class="ant-typography ni-color-gray"
+                                    >
+                                      <strong>
+                                        WSJ Prime
+                                      </strong>
+                                    </span>
+                                    <div>
+                                      NaN
+                                    </div>
+                                  </div>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <span
+                                    class="ant-typography ni-color-gray"
+                                  >
+                                    -NaN
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  NaN
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <span
+                                    class="ant-typography ni-color-gray"
+                                  >
+                                    <strong>
+                                      NaN
+                                    </strong>
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <span
+                                    class="ant-typography ni-color-gray"
+                                  >
+                                    $NaNk - $NaNk
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  undefined
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  undefined
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  NaN%
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  undefined
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <span
+                                    class="ant-badge ant-badge-status ant-badge-not-a-wrapper"
+                                  >
+                                    <span
+                                      class="ant-badge-status-dot ant-badge-status-green"
+                                    />
+                                    <span
+                                      class="ant-badge-status-text"
+                                    />
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  0
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h4
+            class="ant-typography ant-typography-secondary ni-section-break"
+          >
+            Savings
+          </h4>
+          <div
+            class="ant-card ant-card-small ni-table-prospects"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-table-wrapper"
+              >
+                <div
+                  class="ant-spin-nested-loading"
+                >
+                  <div
+                    class="ant-spin-container"
+                  >
+                    <div
+                      class="ant-table"
+                    >
+                      <div
+                        class="ant-table-container"
+                      >
+                        <div
+                          class="ant-table-content"
+                        >
+                          <table
+                            style="table-layout: auto;"
+                          >
+                            <colgroup />
+                            <thead
+                              class="ant-table-thead"
+                            >
+                              <tr>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                   
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Hedge Rate
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  +/-
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Fixed
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Offering
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Amount
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Term
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Expiration
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Fees
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Recurrence
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Cross-sell
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  key
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody
+                              class="ant-table-tbody"
+                            >
+                              <tr
+                                class="ant-table-row ant-table-row-level-0"
+                                data-row-key="0"
+                              >
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <div
+                                    class="u-align-left"
+                                  >
+                                    <span
+                                      class="ant-typography h5"
+                                    >
+                                      <strong>
+                                        Nimble Savings 
+                                      </strong>
+                                    </span>
+                                    <div>
+                                      <span
+                                        class="ant-typography h5 ni-color-light-teal"
+                                      >
+                                        <strong>
+                                           #3
+                                        </strong>
+                                      </span>
+                                       
+                                      <span
+                                        class="ant-typography ant-typography-secondary"
+                                      />
+                                    </div>
+                                  </div>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <div
+                                    class="u-align-left"
+                                  >
+                                    <span
+                                      class="ant-typography ni-color-gray"
+                                    >
+                                      <strong>
+                                        1 year treasury
+                                      </strong>
+                                    </span>
+                                    <div>
+                                      NaN
+                                    </div>
+                                  </div>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <span
+                                    class="ant-typography ni-color-gray"
+                                  >
+                                    NaN
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  No
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <span
+                                    class="ant-typography ni-color-gray"
+                                  >
+                                    <strong>
+                                      NaN
+                                    </strong>
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <span
+                                    class="ant-typography ni-color-gray"
+                                  >
+                                    $NaNk - $NaNk
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  undefined
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  undefined
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  NaN%
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  undefined
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <span
+                                    class="ant-badge ant-badge-status ant-badge-not-a-wrapper"
+                                  >
+                                    <span
+                                      class="ant-badge-status-dot ant-badge-status-green"
+                                    />
+                                    <span
+                                      class="ant-badge-status-text"
+                                    />
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  0
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h4
+            class="ant-typography ant-typography-secondary ni-section-break"
+          >
+            Certified Deposits
+          </h4>
+          <div
+            class="ant-card ant-card-small ni-table-prospects"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-table-wrapper"
+              >
+                <div
+                  class="ant-spin-nested-loading"
+                >
+                  <div
+                    class="ant-spin-container"
+                  >
+                    <div
+                      class="ant-table"
+                    >
+                      <div
+                        class="ant-table-container"
+                      >
+                        <div
+                          class="ant-table-content"
+                        >
+                          <table
+                            style="table-layout: auto;"
+                          >
+                            <colgroup />
+                            <thead
+                              class="ant-table-thead"
+                            >
+                              <tr>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                   
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Hedge Rate
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  +/-
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Fixed
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Offering
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Amount
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Term
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Expiration
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Fees
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Recurrence
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  Cross-sell
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  key
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody
+                              class="ant-table-tbody"
+                            >
+                              <tr
+                                class="ant-table-row ant-table-row-level-0"
+                                data-row-key="0"
+                              >
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <div
+                                    class="u-align-left"
+                                  >
+                                    <span
+                                      class="ant-typography h5"
+                                    >
+                                      <strong>
+                                        Fixed-Rate Certificates of Deposit
+                                      </strong>
+                                    </span>
+                                    <div>
+                                      <span
+                                        class="ant-typography h5 ni-color-light-teal"
+                                      >
+                                        <strong>
+                                          #3
+                                        </strong>
+                                      </span>
+                                       
+                                      <span
+                                        class="ant-typography ant-typography-secondary"
+                                      />
+                                    </div>
+                                  </div>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <div
+                                    class="u-align-left"
+                                  >
+                                    <span
+                                      class="ant-typography ni-color-gray"
+                                    >
+                                      <strong>
+                                        WSJ Prime
+                                      </strong>
+                                    </span>
+                                    <div>
+                                      NaN
+                                    </div>
+                                  </div>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <span
+                                    class="ant-typography ni-color-gray"
+                                  >
+                                    NaN
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  No
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <span
+                                    class="ant-typography ni-color-gray"
+                                  >
+                                    <strong>
+                                      NaN
+                                    </strong>
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                />
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                />
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                />
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  NaN%
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  undefined
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  <span
+                                    class="ant-badge ant-badge-status ant-badge-not-a-wrapper"
+                                  >
+                                    <span
+                                      class="ant-badge-status-dot ant-badge-status-green"
+                                    />
+                                    <span
+                                      class="ant-badge-status-text"
+                                    />
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: center;"
+                                >
+                                  0
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          aria-labelledby="rc-tabs-test-tab-2"
+          class="ant-tabs-tabpane"
+          id="rc-tabs-test-panel-2"
+          role="tabpanel"
+          style="display: none;"
+          tabindex="-1"
+        />
+        <div
+          aria-hidden="true"
+          aria-labelledby="rc-tabs-test-tab-3"
+          class="ant-tabs-tabpane"
+          id="rc-tabs-test-panel-3"
+          role="tabpanel"
+          style="display: none;"
+          tabindex="-1"
+        />
+        <div
+          aria-hidden="true"
+          aria-labelledby="rc-tabs-test-tab-4"
+          class="ant-tabs-tabpane"
+          id="rc-tabs-test-panel-4"
+          role="tabpanel"
+          style="display: none;"
+          tabindex="-1"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

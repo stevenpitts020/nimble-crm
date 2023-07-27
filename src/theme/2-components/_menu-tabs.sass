@@ -1,0 +1,73 @@
+// TODO
+.ant-tabs
+
+  .ant-tabs-tab
+    margin-right: 32px
+
+.ant-tabs-bar
+  color: $text-color-secondary
+
+  &.ant-tabs-top-bar
+    border-bottom: 0
+    margin-bottom: 0
+
+  &.ant-tabs-large-bar .ant-tabs-tab
+    font-weight: 700 !important
+
+.ant-tabs .ant-tabs-top-content > .ant-tabs-tabpane-active
+  //adjust spacing inside tabs
+  margin-top: 48px
+
+// Tabs with charts used in the home page
+.ni-chart-tabs.ant-tabs.ant-tabs-card
+  .ant-tabs-top-bar
+    height: 88px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+
+  .ant-tabs-card-bar
+    .ant-tabs-nav-container
+      float: right
+      height: 88px
+
+  .ant-tabs-card-bar .ant-tabs-tab
+    padding: 24px 32px
+    min-width: 178px
+    height: 88px
+    line-height: 1
+    margin-right: 0
+    border-top: 0px
+    border-bottom: 0px
+    border-right: 0px
+    border-radius: 0
+
+    &:not(.ant-tabs-tab-active)
+      background-color: rgba(0, 0, 0, 0.01)
+      .ni-chart-tabs--tab-inside
+        .ant-typography
+          color: $text-color-secondary !important
+
+  .ni-chart-tabs--tab-inside
+    span.ni-color-dark
+      font-weight: 500
+      @include font-size(13px, 16px)
+
+    h3.ant-typography
+      margin: 0
+      @include font-size(20px, 24px)
+
+    &--profit
+      float: right
+      @include font-size(12px, 24px)
+
+  .ant-tabs-extra-content
+    float: left !important
+    padding-top: 24px
+    padding-left: 24px
+    .ni-section-header--title
+      margin-right: 0
+
+    .ni-section-header--subtitle
+      display: block
+
+      @include from--tablet
+      display: inline-block

@@ -1,0 +1,109 @@
+// vertical paddings
+$padding-xxxl: 60px; // this var is not part of ant but I need it
+$padding-xxl: 48px; // this var is not part of ant but I need it
+$padding-xl: 32px; // this var is not part of ant but I need it
+$padding-lg: 24px; // containers
+$padding-md: 16px; // small containers and buttons
+$padding-sm: 12px; // Form controls and items
+$padding-xs: 8px;  // small items
+$padding-xxs: 4px;  // smaller items
+
+
+// vertical padding for all form controls
+$control-padding-horizontal:    $padding-sm;
+$control-padding-horizontal-sm: $padding-xs;
+
+// Media queries breakpoints for reference.
+// Note: Don't think we need to mess with these
+
+
+$border-radius-base:        8px;
+$border-radius-sm:          4px;
+$border-radius-lg:          12px; // this var is not part of ant but I need it
+$border-radius-sm:          2px;
+
+// -------- Button Sizes -----------
+
+$btn-border-radius-base:    $border-radius-base;
+$btn-border-radius-sm:      $border-radius-base;
+$btn-border-width:          $border-width-base;
+
+$btn-padding-base:  0 $padding-xl;
+$btn-padding-lg:    0 $padding-lg;
+$btn-padding-sm:    0 $padding-md;
+
+$btn-height-base:   40px;
+$btn-height-lg:     57px;
+$btn-height-sm:     32px;
+
+
+// -------- Card Sizes -----------
+
+$card-head-padding:       16px;
+$card-inner-head-padding: 12px;
+$card-padding-base:       24px;
+$card-actions-background: $white;
+$card-shadow:             0px 8px 32px rgba(0, 0, 0, 0.08);
+$card-radius:             12px;
+
+
+// -------- Avatar Sizes -----------
+
+$avatar-size-lg: 56px;
+$avatar-size-sm: 24px;
+// @avatar-font-size-base: 18px;
+// @avatar-font-size-lg: 24px;
+// @avatar-font-size-sm: 14px;
+$avatar-bg:     $lightGray;
+
+// -------- Menu Sizes -----------
+
+$menu-inline-toplevel-item-height:  40px;
+$menu-item-height:                  40px;
+$menu-collapsed-width:              80px;
+
+$menu-item-active-border-width:     0px;
+$menu-item-vertical-margin:         4px;
+$menu-item-boundary-margin:         6px;
+
+// -------- Modal Sizes -----------
+
+$modal-body-padding:                32px;
+
+// -------- Form Sizes -----------
+
+$form-item-margin-bottom:           32px;
+$input-height-lg:                   48px;
+$input-padding-horizontal-lg:       16px;
+$input-padding-vertical-lg:         12px;
+
+// -------- Tabs Sizes -----------
+
+$tabs-horizontal-margin:  0 24px 0 0;
+$tabs-bar-margin:         0 0 32px 0;
+// These may need adjusting
+// $tabs-horizontal-padding-lg:  16px;
+// $tabs-horizontal-margin:      0 32px 0 0;
+
+// -------- Breakpoint Sizes -----------
+
+// Media queries breakpoints
+// Extra small screen / phone
+$screen-xs: 480px;
+$screen-xs-min: $screen-xs;
+
+// Small screen / tablet
+$screen-sm: 576px;
+$screen-sm-min: $screen-sm;
+
+// Medium screen / desktop
+$screen-md: 768px;
+$screen-md-min: $screen-md;
+
+// Large screen / wide desktop
+$screen-lg: 992px;
+$screen-lg-min: $screen-lg;
+
+// Extra large screen / full hd
+$screen-xl: 1200px;
+$screen-xl-min: $screen-xl;

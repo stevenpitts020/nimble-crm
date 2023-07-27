@@ -1,0 +1,41 @@
+// product success component
+.ni-dashboard-product-progress
+  padding: spacer(6)
+
+  &--section-title
+    @include flexbox()
+    @include flex-flow(row wrap)
+    @include justify-content(space-between)
+    @include align-items(center)
+
+    .ant-btn
+      padding: 0
+      float: right
+
+  // a few fixes for responsiveness
+  .ni-circular-progress--wrapper
+    text-align: left
+    @include from--laptop
+      text-align: center
+
+// used inside product success
+.ni-mini-chart-progress--row
+  @include flexbox()
+  @include flex-flow(row wrap)
+  @include justify-content(flex-start)
+  @include align-items(center)
+  margin-bottom: spacer(4)
+
+// competition component
+.ni-dashboard-market-competition
+  padding: spacer(6)
+  &--section-title
+    margin-bottom: spacer(6)
+
+  &--left
+    margin-right: 0
+    margin-bottom: 32px
+
+    @include from--tablet
+      margin-right: 32px
+      margin-bottom: 0

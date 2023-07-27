@@ -1,0 +1,110 @@
+// TODO
+// kinda hackish but makes all buttons inside the form have a min width 146 because design
+// might have to apply to all buttons without icons
+.ant-form .ant-btn
+  min-width: 156px
+
+.ant-btn
+  &.clear
+    background: transparent
+    padding: 0
+    border: 0
+    font-weight: inherit
+    color: inherit
+    height: auto
+    box-shadow: none
+    &:hover,
+    &:active
+      background-color: transparent
+
+  &.padding-vertical-xl
+    padding-left: $padding-xl !important
+    padding-right: $padding-xl !important
+
+  // hack for correct roundness
+  &.ant-btn-round
+    border-radius: 47px
+    &.ant-btn-default
+      border-width: 2px
+
+  // by design convenction all buttons should have this wide
+  &.ant-btn-round:not(.ant-btn-sm)
+    min-width: 126px
+
+  &.ant-btn-ghost
+    color: $lightGray
+    background-color: transparent
+    border-color: $lightGray
+    border-width: 2px
+
+  // guess what, we don't need the dashed style so let's reuse it
+  &.ant-btn-dashed
+    background-color: $lightGray// custom color by Bruno
+    border-color: $lightGray // custom color by Bruno
+    border-style: none
+    color: $white
+
+  &.ant-btn-background-ghost.ant-btn-link
+    color: $text-color-secondary
+
+  // pretiffy button with gradient (except small because design)
+  &.ant-btn-primary
+    border: 0px
+    background-image: linear-gradient(252.68deg, #2795D3 0%, #2BBEC8 100%)
+
+    &:hover
+      background-image: linear-gradient(252.68deg, #2795D3 0%, #4BBFEC 100%)
+
+    &.disabled
+    &[disabled]
+      opacity: 0.45
+      color: $light
+    // fix ghost not having a border
+    &.ant-btn-background-ghost
+      border: 2px solid
+
+  // a success button which is missing from ANT
+  &.ant-btn-success
+    background-color: $lightGreen
+    border-color: $lightGreen
+    color: $light
+    &:active
+      background-color: darken($lightGreen, 10% )
+      border-color: darken($lightGreen, 10% )
+      color: $light
+    &:focus,
+    &:hover
+      background-color: lighten($lightGreen, 10% )
+      border-color: lighten($lightGreen, 10% )
+      color: $light
+
+  // style for type={danger}
+  &.ant-btn-dangerous
+    background-color: $btn-danger-bg
+    border-color: $btn-danger-bg
+    color: $btn-danger-color
+    &:active
+      background-color: darken($btn-danger-bg, 10% )
+      border-color: darken($btn-danger-bg, 10% )
+      color: $btn-danger-color
+    &:focus,
+    &:hover
+      background-color: lighten($btn-danger-bg, 10% )
+      border-color: lighten($btn-danger-bg, 10% )
+      color: $btn-danger-color
+
+
+
+  &.ant-btn-round:not(.ant-btn-sm)
+    padding-left: 40px
+    padding-right: 40px
+
+  // use correct shadow in large buttons
+  &.ant-btn-lg
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08)
+
+  &.ant-btn-sm
+    background-image: none
+    line-height: 14px // fix line height
+    &:hover
+      background-image: none

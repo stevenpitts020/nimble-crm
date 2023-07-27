@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignerVerification /> validCheck return not ok and a date 1`] = `
+<React.Fragment>
+  <AlertTriangleIcon
+    style={
+      Object {
+        "fontSize": "18px",
+        "paddingRight": "6px",
+      }
+    }
+  />
+   
+  12-03-2097
+</React.Fragment>
+`;
+
+exports[`<SignerVerification /> validCheck return not ok with undefined and a date 1`] = `
+<React.Fragment>
+  <AlertTriangleIcon
+    style={
+      Object {
+        "fontSize": "18px",
+        "paddingRight": "6px",
+      }
+    }
+  />
+   
+  12-03-2097
+</React.Fragment>
+`;
+
+exports[`<SignerVerification /> validCheck return ok and a date 1`] = `
+<React.Fragment>
+  <CheckCircleIcon
+    style={
+      Object {
+        "fontSize": "18px",
+        "paddingRight": "6px",
+      }
+    }
+  />
+   
+  12-03-2097
+</React.Fragment>
+`;

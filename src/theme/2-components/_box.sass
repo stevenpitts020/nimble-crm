@@ -1,0 +1,53 @@
+// Grid used with Box component
+.ni-row-flexbox
+  @include flexbox()
+
+.ni-row-flex-center
+  @include flexAlignCenter()
+
+.ni-box
+  background-color: transparent
+
+  &.shadow-small
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.05)
+    border-radius: 6px
+
+  &.theme-light
+    background-color: $light
+
+  &.size-small
+    max-width: 440px
+    width: 100%
+  &.padding-xl
+    // get this value from var
+    padding-left: 48px
+    padding-right: 48px
+    padding-top: 40px
+    padding-bottom: 40px
+
+  &.disclosure-section
+    padding: 1em
+    border: 1px solid #CCC
+
+.ni-row-main-sidebar
+  display: grid
+  grid-gap: 32px
+  grid-template-columns: 1fr
+  margin-bottom: 32px
+  div.ant-card
+    margin-bottom: spacer(8)
+
+  &.slim
+    @include from--laptop
+      grid-template-columns: 80% 20%
+    @include from--desktop
+      grid-template-columns: 82% 18%
+    @include from--desktop-huge
+      grid-template-columns: 1fr 14%
+
+  @include from--laptop
+    grid-template-columns: 1fr 34%
+  @include from--desktop
+    grid-template-columns: 1fr 36%
+  @include from--desktop-huge
+    grid-template-columns: 1fr 28%

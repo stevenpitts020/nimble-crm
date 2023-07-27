@@ -1,0 +1,44 @@
+// TODO
+.ant-form
+  // this is a customization for the 'required' text to be next to the label
+  .ant-form-vertical .ant-form-item-label
+    position: relative
+  .ant-form-item-required
+    position: initial
+  .ant-form-item-required::before
+    @include font-size(12px, 14px)
+    font-family: 'Gilroy', 'sans-serif'
+    font-weight: 500
+    color: rgba(165, 177, 189, 0.5)
+    content: 'Required'
+    margin-right: 0
+    position: absolute
+    top: 0
+    right: 0
+
+  .ant-input,
+  .ant-input-number-input
+    font-weight: bold
+  .ant-input-number
+    width: 100%
+  .ant-input[disabled]
+    background-color: rgba(165, 177, 189, 0.1)
+    color: rgba(0, 0, 0, 0.8)
+
+  .input-message
+    min-height: 356px
+    padding: 12px 16px
+    font-weight: normal
+
+  // customize form upload
+  .ant-upload.ant-upload-drag
+    background: $white
+    border: 3px dashed $veryLightGray
+    border-radius: 0px
+    .ant-upload-btn
+      padding: 44px 0
+    .ant-upload-text
+      @include font-size(20px, 20px)
+      font-weight: bold
+      letter-spacing: -0.02em
+      color: $text-color-secondary

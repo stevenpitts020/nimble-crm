@@ -1,0 +1,184 @@
+// Utilities for adding exceptions to styles
+
+@import '_animation'
+@import '_align'
+@import '_flex'
+@import '_screen-readers'
+@import '_sizing'
+@import '_text'
+@import '_visibility'
+
+
+// TODO refactor all of these below
+
+.u-responsive-img
+  max-width: 100%
+
+.u-margin-left-auto
+  margin-left: auto
+
+.u-margin-right-auto
+  margin-right: auto
+
+.u-margin-none
+  margin: 0 !important
+
+.u-margin-top-none
+  margin-top: 0
+
+.u-margin-bottom-none
+  margin-bottom: 0
+
+.u-margin-left-none
+  margin-left: 0
+
+.u-margin-right-none
+  margin-right: 0
+
+.u-margin-bottom-xxxl
+  margin-bottom: $padding-xxxl !important
+
+.u-margin-bottom-xxl
+  margin-bottom: $padding-xxl !important
+
+.u-margin-bottom-xl
+  margin-bottom: $padding-xl !important
+
+.u-margin-bottom-lg
+  margin-bottom: $padding-lg !important
+
+.u-margin-bottom-md
+  margin-bottom: $padding-md !important
+
+.u-margin-bottom-sm
+  margin-bottom: $padding-sm !important
+
+.u-margin-bottom-xs
+  margin-bottom: $padding-xs !important
+
+.u-margin-bottom-xs
+  margin-bottom: $padding-xs !important
+
+.u-margin-top-xxxl
+  margin-top: $padding-xxxl
+
+.u-margin-top-xxl
+  margin-top: $padding-xxl
+
+.u-margin-top-xl
+  margin-top: $padding-xl
+
+.u-margin-top-lg
+  margin-top: $padding-lg
+
+.u-margin-top-md
+  margin-top: $padding-md
+
+.u-margin-top-sm
+  margin-top: $padding-sm
+
+.u-margin-top-xs
+  margin-top: $padding-xs
+
+.u-margin-top-xs
+  margin-top: $padding-xs
+
+.u-margin-right-xl
+  margin-right: $padding-xl
+
+.u-margin-right-lg
+  margin-right: $padding-lg
+
+.u-margin-right-md
+  margin-right: $padding-md
+
+.u-margin-right-sm
+  margin-right: $padding-sm
+
+.u-margin-right-xs
+  margin-right: $padding-xs
+
+.u-margin-left-lg
+  margin-left: $padding-lg
+
+.u-margin-left-xl
+  margin-left: $padding-xl
+
+.u-margin-left-lg
+  margin-left: $padding-lg
+
+.u-margin-left-md
+  margin-left: $padding-md
+
+.u-margin-left-sm
+  margin-left: $padding-sm
+
+.u-margin-left-xs
+  margin-left: $padding-xs
+
+.u-align-right
+  text-align: right
+
+.u-align-center
+  text-align: center
+
+.u-align-left
+  text-align: left
+
+.u-overflow-x
+  @include for--phone-only
+    overflow-x: scroll
+
+
+// flex
+.flex-spaced-horizontal
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+
+.ni-col-flex,
+.flex-1
+  flex: 1
+
+.flex-035
+  flex: 0.35
+
+// align
+
+.u-vertical-align-top
+  align-items: flex-start
+
+.u-vertical-align-center
+  align-items: center
+
+.u-vertical-align-bottom
+  align-items: flex-end
+
+.u-horizontal-align-left
+  align-items: flex-start
+
+.u-horizontal-align-center
+  align-items: center
+
+.u-horizontal-align-right
+  align-items: flex-end
+
+.u-justify-center
+  justify-content: center
+
+.u-justify-space-around
+  justify-content: space-around
+
+.u-justify-space-between
+  justify-content: space-between
+
+// Misc
+
+.cursor-pointer
+  &:hover,
+  &:active
+    cursor: pointer
+    opacity: 0.8
+
+

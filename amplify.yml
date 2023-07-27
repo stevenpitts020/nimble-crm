@@ -1,0 +1,28 @@
+version: 1
+frontend:
+  cache:
+    paths:
+      - node_modules/**/*
+      - .yarn/**/*
+  phases:
+    preBuild:
+      commands:
+        - nvm use
+        - yarn install --frozen-lockfile --cache-folder .yarn
+    build:
+      commands:
+        - PUBLIC_URL="/" REACT_APP_VERSION="${REACT_APP_VERSION:-1.0.0}.${AWS_COMMIT_ID}" yarn build
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+test:
+  phases:
+    test:
+      commands:
+        - echo "TODO TESTS"
+  artifacts:
+    files:
+      - '**/*'
+    configFilePath: .env.test
+    baseDirectory: .

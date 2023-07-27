@@ -1,0 +1,46 @@
+// Fixes for generic ant card
+.ant-card
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08)
+
+  .ant-card-head
+    border-bottom: 0px
+
+
+  // adjust actions spacing
+  .ant-card-actions
+    margin: 0 spacer(6)
+    border-top-width: 1px
+    border-bottom-right-radius: 8px
+    border-bottom-left-radius: 8px
+    li:not(:last-child)
+      border-right: 0px
+
+    svg
+      color: $lightGray
+      font-size: 20px
+
+  .ant-card-meta
+    // fix for when text-align center on parent
+    text-align: left
+
+    // adjust spacing and font for meta
+    .ant-card-meta-avatar
+      padding-right: spacer(6)
+
+    .ant-card-meta-detail
+      padding-top: spacer(2)
+
+      > div:not(:last-child)
+        margin-bottom: spacer()
+
+      .ant-card-meta-title
+        @include font-size(16px, 16px)
+        font-weight: bold
+
+      .ant-card-meta-description
+        @include font-size(14px, 17px)
+        font-weight: bold
+
+
+  &.ant-card-small > .ant-card-body
+    padding: 0px

@@ -1,0 +1,89 @@
+// calendar component
+.ni-calendar
+  min-width: 270px
+
+  &--header
+    margin-bottom: 24px
+    &--title
+      span
+        color: $text-color-secondary
+
+  // remove border top
+  .ant-fullcalendar
+    border-top: 0px
+
+    // remove default header for now
+  .ant-fullcalendar-header
+    @include flexAlignCenter
+    padding: 0
+    margin-bottom: 16px
+    display: none
+
+  // remove any padding
+  .ant-fullcalendar-calendar-body
+    padding: 0
+
+  // custom next month and prev month days
+  .ant-fullcalendar-last-month-cell .ant-fullcalendar-value, .ant-fullcalendar-next-month-btn-day .ant-fullcalendar-value
+    color: lighten($darkGray, 50%)
+
+  // today date
+  .ant-fullcalendar-today .ant-fullcalendar-value
+    background-color: $text-color-secondary
+    -webkit-box-shadow: none
+    box-shadow: none
+    color: $white
+
+  // general font
+  .ant-fullcalendar td
+    @include font-size(12px, 14px)
+    font-weight: 500
+
+  // a particular day
+  .ant-fullcalendar-value
+    width: 34px
+    height: 34px
+    letter-spacing: 1px
+    color: $darkGray
+    line-height: 34px
+    border-radius: 32px
+
+  // header text
+  .ant-fullcalendar-column-header
+    @include font-size(10px, 12px)
+    width: 34px
+    padding: 0
+    line-height: 34px
+    text-align: center
+    color: #C4C4C4 // custom color by Bruno
+    text-transform: uppercase
+
+
+
+.ant-calendar-picker-container
+  .ant-calendar-range .ant-calendar-input,
+  .ant-calendar-header
+    @include font-size(13px, 17px)
+
+  .ant-calendar-column-header-inner
+    @include font-size(10px, 12px)
+    color: #C4C4C4 // custom color by Bruno
+    text-transform: uppercase
+
+  // selected date
+  .ant-calendar-range .ant-calendar-selected-start-date .ant-calendar-date, .ant-calendar-range .ant-calendar-selected-end-date .ant-calendar-date
+    border-radius: 22px
+
+  // normal day date
+  .ant-calendar-date
+    @include font-size(12px, 22px)
+    color: $darkGray
+    font-weight: 500
+
+
+  // todo define proper colors
+  .ant-tag-blue
+    color: $white
+    background: $text-color-secondary
+    border-color: $text-color-secondary
+    @include font-size(13px, 16px)

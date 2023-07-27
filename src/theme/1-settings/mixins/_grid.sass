@@ -1,0 +1,13 @@
+// Grid Mixins
+
+
+// Create a css grid with min size and gap
+// ex: @include auto-grid(252px, 32px)
+@mixin auto-grid($size: 16rem, $gap: 1rem, $fill-type: auto-fill)
+  display: grid
+  grid-gap: $gap
+  grid-template-columns: repeat($fill-type, minmax($size, 1fr))
+
+// a mixin for grid repeat
+@mixin grid-repeat($fill-type: auto-fill, $min: 16rem, $max: 1fr)
+  grid-template-columns: repeat($fill-type, minmax($min, $max))

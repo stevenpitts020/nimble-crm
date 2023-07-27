@@ -1,0 +1,216 @@
+image: docker:latest
+
+variables:
+  APP: backoffice
+  TXT_RED: "\e[31m"
+  TXT_GREEN: "\e[32m"
+  TXT_BOLD: "\e[1m"
+  TXT_CLEAR: "\e[0m"
+  BG_BLUE: "\e[44m"
+
+stages:
+  - verify
+  - dev
+  - staging
+  - prod
+
+build:
+  stage: verify
+  image:
+    name: node:14-alpine
+    entrypoint: [ "/bin/sh", "-c" ]
+  before_script:
+    - apk add --no-cache python3 py3-pip make g++
+    - yarn install --frozen-lockfile --cache-folder .yarn
+  script:
+    - yarn build
+  except:
+    - tags
+  interruptible: true
+
+test:
+  stage: verify
+  image:
+    name: node:14-alpine
+    entrypoint: [ "/bin/sh", "-c" ]
+  before_script:
+    - apk add --no-cache python3 py3-pip make g++
+    - yarn install --frozen-lockfile --cache-folder .yarn
+  script:
+    - yarn test:ci
+  artifacts:
+    when: always
+    reports:
+      junit: junit.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
+  except:
+    - tags
+  interruptible: true
+
+lint:
+  stage: verify
+  image:
+    name: node:14-alpine
+    entrypoint: [ "/bin/sh", "-c" ]
+  before_script:
+    - apk add --no-cache python3 py3-pip make g++
+    - yarn install --frozen-lockfile --cache-folder .yarn
+  script:
+    - yarn lint:ci
+  except:
+    - tags
+  interruptible: true
+
+.ci_template: &ci_template
+  image: amazonlinux:2
+  allow_failure: true
+  interruptible: false
+  before_script:
+    - yum update -y
+    - yum install -y jq awscli
+  script:
+    - |
+      echo "${BG_BLUE}Deploy ${CI_COMMIT_BRANCH} to Amplify ...${TXT_CLEAR}"
+      sleep 5
+      JOB_ID=`aws amplify list-jobs --app-id ${AWS_AMPLIFY_APP_ID} --branch-name ${CI_COMMIT_BRANCH} | jq -r -c ".jobSummaries[] | select( .commitId == \"${CI_COMMIT_SHA}\" ) .jobId"`
+      if [[ -z "${JOB_ID}" ]]; then
+        echo "${TXT_RED}Failed to find AWS Amplify deployment job!"
+        exit 1
+      fi
+      while true
+      do
+        JOB=`aws amplify get-job --job-id ${JOB_ID} --app-id ${AWS_AMPLIFY_APP_ID} --branch-name ${CI_COMMIT_BRANCH}`
+        JOB_STATUS=`echo ${JOB} | jq -r -c '.job.summary.status'`
+        if [[ JOB_STATUS == "null" ]]; then JOB_STATUS=''; fi
+        if [[ -z "${JOB_STATUS}" ]]; then
+          echo "${TXT_RED}Failed to get status from AWS Amplify!"
+          exit 1
+        fi
+        if [[ "${JOB_STATUS}" == *"FAILED"* ]]; then
+          echo "${TXT_RED}${JOB_STATUS}:${TXT_CLEAR} ${URL}"
+          exit 2
+        fi
+        if [[ "${JOB_STATUS}" == *"SUCCEED"* ]]; then
+          echo "${TXT_GREEN}${JOB_STATUS}:${TXT_CLEAR} ${TXT_BOLD}${URL}"
+          exit 0
+        fi
+        echo "${TXT_BOLD}Status:${TXT_CLEAR} ${JOB_STATUS}  (  ${TXT_BOLD}Build:${TXT_CLEAR} `echo ${JOB} | jq -r -c '.job.steps[] | select( .stepName == \"BUILD\" ) .status'`  |  ${TXT_BOLD}Deploy:${TXT_CLEAR} `echo ${JOB} | jq -r -c '.job.steps[] | select( .stepName == \"DEPLOY\" ) .status'`  |  ${TXT_BOLD}Verify:${TXT_CLEAR} `echo ${JOB} | jq -r -c '.job.steps[] | select( .stepName == \"VERIFY\" ) .status'`  )"
+        sleep 30
+      done
+
+'>> feature app':
+  <<: *ci_template
+  stage: dev
+  needs: [ ]
+  variables:
+    URL: https://${CI_COMMIT_BRANCH}.${AWS_AMPLIFY_APP_ID}.amplifyapp.com
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - if: '$CI_COMMIT_BRANCH =~ /feature-.+/'
+
+'>> edge':
+  <<: *ci_template
+  stage: prod
+  needs: [ ]
+  only: [ 'master' ]
+  image: amazonlinux:2
+  allow_failure: true
+  variables:
+    URL: https://${APP}-edge.nimblefi.com
+
+.deploy_template: &deploy_template
+  image: amazonlinux:2
+  interruptible: false
+  before_script:
+    - yum update -y
+    - yum install -y git jq awscli
+    - 'command -v ssh-agent || ( yum -y install openssh-client )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "${GIT_SSH_DEPLOY_PK}")
+    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - git config --global user.name "${GITLAB_USER_NAME}"
+    - mkdir -p ~/.ssh
+    - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
+  script:
+    - |
+      echo "${BG_BLUE}Push to env.${NAMESPACE} ...${TXT_CLEAR}"
+      git clone "git@gitlab.com:${CI_PROJECT_PATH}.git" ${CI_COMMIT_SHORT_SHA}
+      cd ${CI_COMMIT_SHORT_SHA}
+      git checkout "env.${NAMESPACE}"
+      git checkout ${CI_COMMIT_REF_NAME}
+      echo "$(date) ${GITLAB_USER_NAME}" > .gitlab-deploy && git add .gitlab-deploy && git commit -m "${CI_PIPELINE_ID}"
+      git push --force origin "${CI_COMMIT_REF_NAME}:env.${NAMESPACE}"
+    - |
+      echo "${BG_BLUE}Deploy ${NAMESPACE} in AWS Amplify ...${TXT_CLEAR}"
+      sleep 5
+      JOB_ID=`aws amplify list-jobs --app-id ${AWS_AMPLIFY_APP_ID} --branch-name env.${NAMESPACE} | jq -r -c ".jobSummaries[] | select( .commitMessage == \"${CI_PIPELINE_ID}\n\" ) .jobId"`
+      if [[ -z "${JOB_ID}" ]]; then
+        echo "${TXT_RED}Failed to find AWS Amplify deployment job!"
+        exit 1
+      fi
+      while true
+      do
+        JOB=`aws amplify get-job --job-id ${JOB_ID} --app-id ${AWS_AMPLIFY_APP_ID} --branch-name env.${NAMESPACE}`
+        JOB_STATUS=`echo ${JOB} | jq -r -c '.job.summary.status'`
+        if [[ JOB_STATUS == "null" ]]; then JOB_STATUS=''; fi
+        if [[ -z "${JOB_STATUS}" ]]; then
+          echo "${TXT_RED}Failed to get status from AWS Amplify!"
+          exit 1
+        fi
+        if [[ "${JOB_STATUS}" == *"FAILED"* ]]; then
+          echo "${TXT_RED}${JOB_STATUS}:${TXT_CLEAR} ${URL}"
+          exit 2
+        fi
+        if [[ "${JOB_STATUS}" == *"SUCCEED"* ]]; then
+          echo "${TXT_GREEN}${JOB_STATUS}:${TXT_CLEAR} ${TXT_BOLD}${URL}"
+          exit 0
+        fi
+        echo "${TXT_BOLD}Status:${TXT_CLEAR} ${JOB_STATUS}  (  ${TXT_BOLD}Build:${TXT_CLEAR} `echo ${JOB} | jq -r -c '.job.steps[] | select( .stepName == \"BUILD\" ) .status'`  |  ${TXT_BOLD}Deploy:${TXT_CLEAR} `echo ${JOB} | jq -r -c '.job.steps[] | select( .stepName == \"DEPLOY\" ) .status'`  |  ${TXT_BOLD}Verify:${TXT_CLEAR} `echo ${JOB} | jq -r -c '.job.steps[] | select( .stepName == \"VERIFY\" ) .status'`  )"
+        sleep 30
+      done
+
+'>> development':
+  <<: *deploy_template
+  stage: dev
+  needs: [ ]
+  allow_failure: true
+  when: manual
+  resource_group: development
+  environment:
+    name: development
+    url: https://${APP}-dev.nimblefi.com
+  variables:
+    NAMESPACE: development
+    URL: https://${APP}-dev.nimblefi.com
+
+'>> staging':
+  <<: *deploy_template
+  stage: staging
+  needs: [ ]
+  allow_failure: true
+  when: manual
+  resource_group: staging
+  environment:
+    name: staging
+    url: https://${APP}-staging.nimblefi.com
+  variables:
+    NAMESPACE: staging
+    URL: https://${APP}-staging.nimblefi.com
+
+'>> production':
+  <<: *deploy_template
+  stage: prod
+  needs: [ 'lint', 'test', '>> edge' ]
+  only: [ 'master', 'env.production' ]
+  allow_failure: false
+  when: manual
+  resource_group: production
+  environment:
+    name: production
+    url: https://${APP}.nimblefi.com
+  variables:
+    NAMESPACE: production
+    URL: https://${APP}.nimblefi.com

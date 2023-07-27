@@ -1,0 +1,23 @@
+.ni-divider
+  border: 1px solid #E5E9F2
+
+  &.size-2
+    border-width: 2px
+
+  &.size-3
+    border-width: 3px
+
+  &.direction-horizontal
+    @each $name, $size in $sizes
+      &.spacing-#{$name}
+        margin-top: $size
+        margin-bottom: $size
+
+  &.direction-vertical
+    height: 100%
+    width: 1px
+
+    @each $name, $size in $sizes
+      &.spacing-#{$name}
+        margin-left: $size
+        margin-right: $size

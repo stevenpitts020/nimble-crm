@@ -1,0 +1,23 @@
+.ni-filters-tab
+  span
+    margin-right: 14px
+  button.filter-button
+    &:not(:last-of-type)
+      margin-right: 10px
+    &:focus
+      outline: 0
+    border: none
+    padding: 9px 20px
+    background: #EDEDED
+    border-radius: 8px
+    color: #6F7C88
+    font-weight: 500
+    @include font-size(14px, 24px)
+    &.active
+      color: white
+      background: #4BBFEC
+
+    &:hover,
+    &:active
+      cursor: pointer
+

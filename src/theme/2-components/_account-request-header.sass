@@ -1,0 +1,33 @@
+.account-request-header
+  .account-request-info
+    flex-direction: column
+    align-items: flex-end
+    @include from--tablet
+      flex-direction: row
+      align-items: stretch
+    .account-request-info-detail
+      .info-value
+        text-overflow: ellipsis
+        white-space: nowrap
+        margin-right: 5px
+    .agreement-button
+      @include font-size(14px, 16px)
+      margin-left: 21px
+      margin-top: 21px
+      background: #FFC657
+      border-color: #FFC657
+      font-weight: bold
+      font-size: 14px
+      line-height: 16px
+      color: white
+      padding-left: 20px !important
+      padding-right: 20px !important
+
+      @include from--tablet
+        margin-top: 0
+      &.completed
+          background: #62DB85
+          border-color: #62DB85
+      &.declined
+          background: #F97A7A
+          border-color: #F97A7A

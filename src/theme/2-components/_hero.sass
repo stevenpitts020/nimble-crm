@@ -1,0 +1,25 @@
+// reusable title and introduction for modals
+.ni-hero
+  text-align: center
+  padding: 30px 50px
+
+  &.rounded-top
+    border-top-left-radius: $border-radius-base
+    border-top-right-radius: $border-radius-base
+
+  &.theme-light
+    background: rgba(229, 233, 242, 0.2)
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+    span.ant-typography
+      color: $gray
+
+  &.theme-dark
+    background: $darkNoir
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+    h1, h2, h3, h4
+      color: $light
+    span.ant-typography
+      color: $veryLightGray
+
+  h2.ant-typography
+    margin-bottom: 10px

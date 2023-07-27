@@ -1,0 +1,183 @@
+// Color definitions
+
+// -------- Palette -----------
+
+$mildBlue: #4bbfec;
+$darkBlue: #2795d3;
+
+$greenishBlue: #2bbec8;
+$lightGreen: #62db85;
+$lightRed: #f97a7a;
+$lightYellow: #f3dca9;
+
+$dark: #000000;
+$light: #ffffff;
+
+$darkNoir: #3a4c53;
+$fiftyShadesGray: #898888;
+$darkGray: #616161;
+$gray: #6f7c88;
+$lightGray: #a5b1bd;
+$veryLightGray: #e5e9f2;
+$muchLightGray: #f7f8fc;
+
+$bluishGray: #f7f8fb;
+$todo: pink;
+
+// secondary for dots, map
+
+$lightPink: #d3356a;
+$lightOrange: #fc7342;
+$lightPurple: #8643de;
+$green: #01c48d;
+$darkGreen: #27ae60;
+$darkPurple: #bb6bd9;
+$darkOrange: #f2994a;
+$darkRed: #eb5757;
+$veryLightYellow: #fffaea;
+
+$lightestGreen: #8af1a8;
+$lightestRed: #ff9b9b;
+$darkestGreen: #077026;
+$darkestRed: #a00505;
+
+// -------- Colors -----------
+$primary-color: $mildBlue;
+$info-color: $darkBlue;
+$success-color: $lightGreen;
+$processing-color: $greenishBlue;
+$error-color: $lightRed;
+$highlight-color: $darkBlue;
+$warning-color: $lightYellow;
+
+$normal-color: $lightGray;
+$white: $light;
+$black: $dark;
+
+// -------- Background Colors -----------
+// Background color for `<body>`
+$body-background: $bluishGray;
+// Base background color for most components
+$component-background: $light;
+
+// -------- Layout Colors -----------
+
+$layout-body-background: $body-background;
+$layout-header-background: $light;
+$layout-footer-background: $body-background;
+$layout-sider-background: $light;
+$background-color-light: $veryLightGray; // background of header and selected item
+$background-color-base: $lightGray;
+
+// -------- Text Colors -----------
+$text-color: $black;
+$text-color-secondary: $lightGray;
+$text-color-inverse: $light;
+$icon-color-hover: $black;
+
+// also used in labels
+$heading-color: $black;
+$heading-color-dark: $white;
+// dark mode i guess
+$text-color-dark: $white;
+$text-color-secondary-dark: $lightGray;
+$text-selection-bg: $primary-color;
+
+// -------- Link Colors -----------
+$link-color: $primary-color;
+
+// -------- Border Colors -----------
+$border-color-base: $veryLightGray; // base border outline a component
+$border-color-split: fade(
+  color($veryLightGray),
+  75%
+); // split border inside a component
+$border-width-base: 1px; // width of the border for a component
+
+// -------- Form Colors -----------
+$label-required-color: rgba(165, 177, 189, 0.5);
+$label-color: $lightGray;
+
+// TODO forms, tags, tables, etc
+
+// -------- Table Colors -----------
+$table-header-bg: $white;
+$table-header-color: $lightGray;
+$table-header-sort-bg: $background-color-base;
+$table-row-hover-bg: fade(color($veryLightGray), 45%);
+$table-selected-row-color: inherit;
+$table-selected-row-bg: $veryLightYellow;
+
+$table-body-selected-sort-bg: $table-selected-row-bg;
+$table-selected-row-hover-bg: $bluishGray; //#FFFAEA;
+$table-expanded-row-bg: $veryLightYellow; // #FFFAEA; //?
+$table-padding-vertical: 24px;
+$table-padding-horizontal: 24px;
+$table-footer-bg: $white;
+$table-footer-color: $lightGray;
+
+// -------- Menu Colors -----------
+
+$menu-bg: $component-background;
+
+$menu-item-color: $text-color-secondary;
+$menu-highlight-color: $processing-color;
+
+$menu-item-active-bg: $component-background;
+
+$menu-item-font-size: $font-size-base;
+$menu-icon-size: $font-size-lg;
+$menu-icon-size-lg: $font-size-lg;
+
+// -------- Button Colors -----------
+
+// TODO review these
+$btn-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+$btn-primary-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+$btn-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+
+$btn-primary-bg: $darkBlue;
+
+$btn-default-color: $text-color-secondary;
+$btn-default-bg: $component-background;
+$btn-default-border: $background-color-base;
+
+$btn-danger-color: $white;
+$btn-danger-bg: $error-color;
+$btn-danger-border: $error-color;
+
+// -------- Progress Bar and Circle Colors -----------
+
+$progress-default-color: $processing-color;
+$progress-remaining-color: $background-color-light;
+$progress-text-color: $text-color-secondary;
+
+// -------- Tabs Colors -----------
+
+$tabs-card-active-color: $text-color;
+$tabs-ink-bar-color: $text-color;
+
+$tabs-highlight-color: $text-color;
+$tabs-hover-color: $text-color;
+$tabs-active-color: $text-color;
+
+// -------- Tooltip Colors -----------
+
+$tooltip-color: $white;
+$tooltip-bg: $black;
+
+// -------- Modal Colors -----------
+
+$modal-footer-border-color-split: $component-background;
+$modal-mask-bg: fade($black, 25%);
+
+// -------- Input Colors -----------
+
+$input-color: $text-color;
+$input-border-color: $border-color-base;
+$input-hover-border-color: $primary-color;
+
+// -------- Logos to white -----------
+.to-white {
+  filter: brightness(0) invert(1);
+}

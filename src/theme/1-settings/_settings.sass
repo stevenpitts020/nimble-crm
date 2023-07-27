@@ -1,0 +1,58 @@
+// Note, all of these below are in scss because we are importing these variables into ant before compilation
+// For more see https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
+// NOTE: restart the server when you make changes to variables that influence Ant
+// ANT DEFINITIONS
+@import './_typography'
+@import './_colors'
+@import './_layout'
+
+// from layout
+$sizes: ('xxxl': $padding-xxxl, 'xxl': $padding-xxl, 'xl': $padding-xl, 'lg': $padding-lg, 'md': $padding-md, 'sm': $padding-sm, 'xs': $padding-xs, 'xxs': $padding-xxs)
+
+$grid-breakpoints: (xs: 0, sm: $screen-sm, md: $screen-md, lg: $screen-lg, xl: $screen-xl) !default
+
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex !default
+
+// these are not used by ANT
+@import './_mixins'
+
+
+// Import here not to conflict with antd
+@font-face
+  font-family: "Gilroy"
+  font-display: auto
+  src: url('/fonts/radomir_tinkov_-_gilroy-regular-webfont.woff2') format('woff2'),
+  url('/fonts/radomir_tinkov_-_gilroy-regular-webfont.woff') format('woff'),
+  url('/fonts/radomir_tinkov_-_gilroy-regular-webfont.ttf') format('truetype')
+
+@font-face
+  font-family: "Gilroy"
+  font-display: auto
+  src: url('/fonts/radomir_tinkov_-_gilroy-bold-webfont.woff2') format('woff2'),
+  url('/fonts/radomir_tinkov_-_gilroy-bold-webfont.woff') format('woff'),
+  url('/fonts/radomir_tinkov_-_gilroy-bold-webfont.ttf') format('truetype')
+  font-weight: 700
+
+@font-face
+  font-family: "Gilroy"
+  font-display: auto
+  src: url('/fonts/radomir_tinkov_-_gilroy-semibold-webfont.woff2') format('woff2'),
+  url('/fonts/radomir_tinkov_-_gilroy-semibold-webfont.woff') format('woff'),
+  url('/fonts/radomir_tinkov_-_gilroy-semibold-webfont.ttf') format('truetype')
+  font-weight: 600
+
+@font-face
+  font-family: "Gilroy"
+  font-display: auto
+  src: url('/fonts/radomir_tinkov_-_gilroy-medium-webfont.woff2') format('woff2'),
+  url('/fonts/radomir_tinkov_-_gilroy-medium-webfont.woff') format('woff'),
+  url('/fonts/radomir_tinkov_-_gilroy-medium-webfont.ttf') format('truetype')
+  font-weight: 500
+
+@font-face
+  font-family: "Gilroy"
+  font-display: auto
+  src: url('/fonts/radomir_tinkov_-_gilroy-thin-webfont.woff2') format('woff2'),
+  url('/fonts/radomir_tinkov_-_gilroy-thin-webfont.woff') format('woff'),
+  url('/fonts/radomir_tinkov_-_gilroy-thin-webfont.ttf') format('truetype')
+  font-weight: 300

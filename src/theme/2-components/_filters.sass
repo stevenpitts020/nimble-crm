@@ -1,0 +1,44 @@
+// dropdown with date filters
+.ni-filter-date-menu
+  @include flexbox()
+  @include align-items(center)
+  @include justify-content(space-between)
+  margin-left: 4px
+
+  // custom calendar picker inside
+  .ant-calendar-picker
+    width: 220px
+
+    .ant-calendar-picker-input.ant-input
+      background: transparent
+      border: 0px
+      &:focus,
+      &:hover
+        box-shadow: none
+        border-color: transparent
+        color: $text-color-secondary
+
+      .anticon
+        color: $text-color-secondary
+        // hack position
+        margin-top: -12px
+
+      .ant-calendar-range-picker-input
+        @include font-size(13px, 15px)
+        font-weight: 500
+
+
+
+
+
+// dropdown with filters (used in headers)
+.ni-filter-dropdown-menu
+  .ant-btn
+    @include flexbox()
+    @include align-items(center)
+
+    box-shadow: none
+    color: $text-color-secondary
+    &:hover,
+    &:focus
+      color: $text-color

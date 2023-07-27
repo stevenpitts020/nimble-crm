@@ -1,0 +1,57 @@
+// stat card in dashboard
+
+.ni-stat-cards
+  margin-bottom: $padding-xl
+  @include auto-grid($size: 252px, $gap: 32px, $fill-type: auto-fill)
+
+  @include from--tablet
+    @include grid-repeat(2, $min: 252px, $max: 1fr)
+
+  @include from--laptop
+    @include grid-repeat(auto-fit, $min: 190px, $max: 1fr)
+
+  .ni-stat-card
+    padding: 20px
+    border-radius: $card-radius
+    overflow: hidden
+    max-height: 104px
+    position: relative
+
+    &--subtitle,
+    &--label,
+    &--value,
+      color: $white !important
+      margin-bottom: 0 !important
+    &--bottom-row
+      margin-top: 6px
+    &--label
+      @include font-size(12px, 16px)
+      font-weight: 600
+      text-transform: uppercase
+
+    &--subtitle
+      @include font-size(13px, 15px)
+
+    &--value
+      @include font-size(40px, 40px)
+
+    &--info
+      background: rgba(255, 255, 255, 0.2)
+      width: 20px  !important
+      height: 20px  !important
+      min-width: 20px  !important
+      font-size: 9px !important
+      border: 0px
+      // fix zindex for tooltip
+      z-index: 999
+      svg
+        color: $white
+        font-size: 20px
+
+    &--wrapper
+      // hack for chart inside div
+      position: absolute
+      width: 122%
+      height: 100%
+      bottom: -20px
+      left: -30px

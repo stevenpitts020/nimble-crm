@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailMessageHelper buildAproveEmailMessage should return text 1`] = `"000, 2000, xxx, Central Bank, centralbank.com, Steve, Simple Checking, Mark"`;
+
+exports[`EmailMessageHelper buildDeclineEmailMessage should return text 1`] = `"Central Bank, centralbank.com, Steve, Simple Checking, Mark"`;

@@ -1,0 +1,458 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountRequestTable it renders the account requests 1`] = `
+<div>
+  <div
+    class="ant-card ant-card-small"
+  >
+    <div
+      class="ant-card-body"
+    >
+      <div
+        class="ant-table-wrapper row-click"
+      >
+        <div
+          class="ant-spin-nested-loading"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="ant-table"
+            >
+              <div
+                class="ant-table-container"
+              >
+                <div
+                  class="ant-table-content"
+                >
+                  <table
+                    style="table-layout: fixed;"
+                  >
+                    <colgroup />
+                    <thead
+                      class="ant-table-thead"
+                    >
+                      <tr>
+                        <th
+                          class="ant-table-cell"
+                        >
+                          Name
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          style="text-align: center;"
+                        >
+                          Request Date
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          style="text-align: center;"
+                        >
+                          Products
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          style="text-align: center;"
+                        >
+                          Status
+                        </th>
+                        <th
+                          class="ant-table-cell ant-table-cell-ellipsis"
+                          style="text-align: center;"
+                          title="Compliance Checks"
+                        >
+                          Compliance Checks
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="ant-table-tbody"
+                    >
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="2552ab85-08da-4bb5-be00-9e94d282d348"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <div
+                            class="ni-box u-align-left"
+                            data-testid="box"
+                          >
+                            <h5
+                              class="ant-typography"
+                              data-testid="status-APPROVED"
+                            >
+                              Han James Solo
+                            </h5>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: center;"
+                        >
+                          <span
+                            class="ant-typography ni-color-dark"
+                          >
+                            Mar 16, 2019 12:34 PM
+                          </span>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: center;"
+                        >
+                          <span
+                            class="ant-typography"
+                          >
+                            Simple Checking
+                          </span>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: center;"
+                        >
+                          <div
+                            class="account-request-status"
+                          >
+                            <button
+                              class="approved"
+                            >
+                              Approved
+                            </button>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell ant-table-cell-ellipsis"
+                          style="text-align: center;"
+                        >
+                          <div
+                            class="ni-table-compliance-status"
+                            data-testid="compliance-status"
+                          >
+                            <div
+                              class="status-check-item"
+                            >
+                              <span
+                                aria-hidden="true"
+                                hidden=""
+                              >
+                                Face Match - Successful Verification
+                              </span>
+                              <span
+                                class="anticon"
+                                data-testid="passed"
+                                role="img"
+                                style="font-size: 24px;"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="1em"
+                                  viewBox="0 0 24 24"
+                                  width="1em"
+                                >
+                                  <path
+                                    clip-rule="evenodd"
+                                    d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z"
+                                    fill="#36B37E"
+                                    fill-rule="evenodd"
+                                    opacity=".15"
+                                  />
+                                  <path
+                                    d="M10.398 15.824l-3.261-3.242A.476.476 0 017 12.23c0-.143.046-.26.137-.351l.722-.703a.435.435 0 01.342-.156c.137 0 .257.052.361.156l2.188 2.187 4.688-4.687a.496.496 0 01.36-.156c.137 0 .251.052.343.156l.722.703A.476.476 0 0117 9.73c0 .144-.046.26-.137.352l-5.761 5.742a.446.446 0 01-.352.156.446.446 0 01-.352-.156z"
+                                    fill="#01C48D"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <div
+                              class="status-check-item"
+                            >
+                              <span
+                                aria-hidden="true"
+                                hidden=""
+                              >
+                                Document Match - Not valid
+                              </span>
+                              <span
+                                class="anticon"
+                                data-testid="failed"
+                                role="img"
+                                style="font-size: 24px;"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="1em"
+                                  viewBox="0 0 24 24"
+                                  width="1em"
+                                >
+                                  <path
+                                    clip-rule="evenodd"
+                                    d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z"
+                                    fill="#F97A7A"
+                                    fill-rule="evenodd"
+                                  />
+                                  <path
+                                    clip-rule="evenodd"
+                                    d="M12 6a1 1 0 00-1 1v6a1 1 0 102 0V7a1 1 0 00-1-1zm0 10a1 1 0 110 2 1 1 0 010-2z"
+                                    fill="#FCFDFF"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <div
+                              class="status-check-item"
+                            >
+                              <span
+                                aria-hidden="true"
+                                hidden=""
+                              >
+                                Address Check - Not valid
+                              </span>
+                              <span
+                                class="anticon"
+                                data-testid="failed"
+                                role="img"
+                                style="font-size: 24px;"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="1em"
+                                  viewBox="0 0 24 24"
+                                  width="1em"
+                                >
+                                  <path
+                                    clip-rule="evenodd"
+                                    d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z"
+                                    fill="#F97A7A"
+                                    fill-rule="evenodd"
+                                  />
+                                  <path
+                                    clip-rule="evenodd"
+                                    d="M12 6a1 1 0 00-1 1v6a1 1 0 102 0V7a1 1 0 00-1-1zm0 10a1 1 0 110 2 1 1 0 010-2z"
+                                    fill="#FCFDFF"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <div
+                              class="status-check-item"
+                            >
+                              <span
+                                aria-hidden="true"
+                                hidden=""
+                              >
+                                Sanctions - No matches found
+                              </span>
+                              <span
+                                class="anticon"
+                                data-testid="passed"
+                                role="img"
+                                style="font-size: 24px;"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="1em"
+                                  viewBox="0 0 24 24"
+                                  width="1em"
+                                >
+                                  <path
+                                    clip-rule="evenodd"
+                                    d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z"
+                                    fill="#36B37E"
+                                    fill-rule="evenodd"
+                                    opacity=".15"
+                                  />
+                                  <path
+                                    d="M10.398 15.824l-3.261-3.242A.476.476 0 017 12.23c0-.143.046-.26.137-.351l.722-.703a.435.435 0 01.342-.156c.137 0 .257.052.361.156l2.188 2.187 4.688-4.687a.496.496 0 01.36-.156c.137 0 .251.052.343.156l.722.703A.476.476 0 0117 9.73c0 .144-.046.26-.137.352l-5.761 5.742a.446.446 0 01-.352.156.446.446 0 01-.352-.156z"
+                                    fill="#01C48D"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <div
+                              class="status-check-item"
+                            >
+                              <span
+                                aria-hidden="true"
+                                hidden=""
+                              >
+                                Adverse Media - No matches found
+                              </span>
+                              <span
+                                class="anticon"
+                                data-testid="passed"
+                                role="img"
+                                style="font-size: 24px;"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="1em"
+                                  viewBox="0 0 24 24"
+                                  width="1em"
+                                >
+                                  <path
+                                    clip-rule="evenodd"
+                                    d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z"
+                                    fill="#36B37E"
+                                    fill-rule="evenodd"
+                                    opacity=".15"
+                                  />
+                                  <path
+                                    d="M10.398 15.824l-3.261-3.242A.476.476 0 017 12.23c0-.143.046-.26.137-.351l.722-.703a.435.435 0 01.342-.156c.137 0 .257.052.361.156l2.188 2.187 4.688-4.687a.496.496 0 01.36-.156c.137 0 .251.052.343.156l.722.703A.476.476 0 0117 9.73c0 .144-.046.26-.137.352l-5.761 5.742a.446.446 0 01-.352.156.446.446 0 01-.352-.156z"
+                                    fill="#01C48D"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <div
+                              class="status-check-item"
+                            >
+                              <span
+                                aria-hidden="true"
+                                hidden=""
+                              >
+                                Politically Exposed - Possible matches found
+                              </span>
+                              <span
+                                class="anticon"
+                                data-testid="failed"
+                                role="img"
+                                style="font-size: 24px;"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="1em"
+                                  viewBox="0 0 24 24"
+                                  width="1em"
+                                >
+                                  <path
+                                    clip-rule="evenodd"
+                                    d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z"
+                                    fill="#F97A7A"
+                                    fill-rule="evenodd"
+                                  />
+                                  <path
+                                    clip-rule="evenodd"
+                                    d="M12 6a1 1 0 00-1 1v6a1 1 0 102 0V7a1 1 0 00-1-1zm0 10a1 1 0 110 2 1 1 0 010-2z"
+                                    fill="#FCFDFF"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <ul
+              class="ant-pagination ant-table-pagination ant-table-pagination-right"
+              unselectable="unselectable"
+            >
+              <li
+                class="ant-pagination-total-text"
+              >
+                <span
+                  data-pagination-total="2"
+                  data-testid="pagination-total"
+                >
+                  Showing
+                  1
+                   -
+                  2
+
+
+                  items
+                </span>
+              </li>
+              <li
+                aria-disabled="true"
+                class="ant-pagination-prev ant-pagination-disabled"
+                title="Previous Page"
+              >
+                <button
+                  class="ant-pagination-item-link"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="left"
+                    class="anticon anticon-left"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class=""
+                      data-icon="left"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </li>
+              <li
+                class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+                tabindex="0"
+                title="1"
+              >
+                <a
+                  rel="nofollow"
+                >
+                  1
+                </a>
+              </li>
+              <li
+                aria-disabled="true"
+                class="ant-pagination-next ant-pagination-disabled"
+                title="Next Page"
+              >
+                <button
+                  class="ant-pagination-item-link"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="right"
+                    class="anticon anticon-right"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class=""
+                      data-icon="right"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

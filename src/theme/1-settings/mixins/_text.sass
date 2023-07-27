@@ -1,0 +1,28 @@
+// Text Mixins
+// font-size
+// text-truncate
+
+
+// Define default font size
+// ex: calculateRem(16px)
+@function calculateRem($size)
+  $rem-size: $size / 16px
+  @return $rem-size * 1rem
+
+
+// Font size and line height mixin
+// ex: @include font-size(16px, 32px);
+@mixin font-size($size, $line-height: false)
+  font-size: $size
+  font-size: calculateRem($size)
+  line-height: $line-height-base
+
+  @if $line-height != false
+		line-height: ($line-height / $size)
+
+// Text truncate
+// Requires inline-block or block for proper styling
+@mixin text-truncate()
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap

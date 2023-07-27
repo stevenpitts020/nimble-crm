@@ -1,0 +1,19 @@
+// some fixes for pagination
+
+
+.ant-table-wrapper
+  .ant-table-pagination.ant-pagination
+    display: flex
+    justify-content: center
+    align-items: center
+    float: none
+    padding: 1rem 36px
+
+    .ant-pagination-total-text
+      flex: 1
+      color: $lightGray
+
+    // use secondary color in links
+    .ant-pagination-item a,
+    .ant-pagination-item-link
+      color: $text-color-secondary

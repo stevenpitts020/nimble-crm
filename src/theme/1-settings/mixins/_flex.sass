@@ -1,0 +1,49 @@
+// Flex Mixins
+// - Flexbox
+// TODO refactor these
+
+// A mixin to facilitate flex
+@mixin flexbox
+  display: -webkit-box // old
+  display: -moz-box // old
+  display: -ms-flexbox // ie
+  display: -webkit-flex // new
+  display: flex // new
+
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow)
+  -webkit-flex-flow: $flow
+  -moz-flex-flow: $flow
+  -ms-flex-flow: $flow
+  flex-flow: $flow
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify)
+  -webkit-justify-content: $justify
+  -moz-justify-content: $justify
+  -ms-justify-content: $justify
+  justify-content: $justify
+  -ms-flex-pack: $justify
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align)
+  -webkit-align-items: $align
+  -moz-align-items: $align
+  -ms-align-items: $align
+  -ms-flex-align: $align
+  align-items: $align
+
+// just use this and forget
+// ex: @include flexAlignCenter
+@mixin flexAlignCenter()
+  @include flexbox()
+  @include flex-flow(row wrap)
+  @include justify-content(space-between)
+  @include align-items(center)

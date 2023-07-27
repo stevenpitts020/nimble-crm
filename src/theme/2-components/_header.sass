@@ -1,0 +1,61 @@
+header.ni-header
+  background-color: $darkNoir
+  padding: 0 24px
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  flex-direction: column
+
+  @include from--tablet
+    height: 85px
+    flex-direction: row
+    justify-content: space-between
+    align-items: stretch
+
+    > .section
+      align-items: center
+      display: flex
+      flex: 1 0 0
+
+      &:not(:first-child):last-child
+        justify-content: flex-end
+
+.ni-header-institution
+  margin-top: $padding-sm
+  @include from--tablet
+    margin-top: 0
+
+  .ant-typography
+    color: $gray
+    margin: 0
+
+.ni-header-avatar.ant-avatar
+  background-color: $gray
+
+.ni-header-user
+  text-align: center
+  margin: $padding-sm 0
+
+  > *
+    margin-bottom: $padding-sm
+
+  @include from--tablet
+    text-align: right
+    margin-bottom: 0
+    > *
+      margin-right: 12px
+      margin-bottom: 0
+    > *:last-child
+      margin-right: 0
+
+  button.ant-btn-link
+    @include font-size(14px, 17px)
+    padding: 0
+    height: auto
+    &:not(:last-child)
+      margin-right: 14px
+
+  .ant-typography
+    @include font-size(14px, 17px)
+    color: $veryLightGray
+    margin: 0

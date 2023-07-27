@@ -1,0 +1,55 @@
+// Media Queries mixins
+// TODO refactor these
+
+// define space
+//  '1': '0.25rem', // 4px
+//  '2': '0.5rem',  // 8px
+//  '4': '1rem',    // 16px
+//  '6': '1.5rem',  // 24px
+//  '8': '2rem',    // 32px
+//  '12': '3rem',   // 48px
+@function spacer($unit: 1)
+  $base-spacing: 4px
+  @return $base-spacing * $unit
+
+
+// Media queries for responsive goodiness
+// @include from--tablet
+//    padding: 20px
+//
+
+@mixin for--phone-only
+  @media (max-width: $screen-sm)
+    @content
+
+@mixin from--phone
+  @media (min-width: $screen-xs)
+    @content
+
+@mixin from--tablet-portrait
+  @media (min-width: $screen-sm)
+    @content
+
+@mixin from--tablet
+  @media (min-width: $screen-md)
+    @content
+
+@mixin from--laptop
+  @media (min-width: $screen-lg)
+    @content
+
+@mixin from--desktop
+  @media (min-width: $screen-xl+100)
+    @content
+
+@mixin from--desktop-huge
+  @media (min-width: $screen-xl+600)
+    @content
+
+@mixin to--tablet
+  @media (max-width: $screen-md)
+    @content
+
+@mixin ie-only 
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) 
+    @content

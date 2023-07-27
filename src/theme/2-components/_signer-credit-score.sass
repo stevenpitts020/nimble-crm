@@ -1,0 +1,41 @@
+$colorPoor: #F2715A
+$colorFair: #C4018D
+$colorGood: #01ADC4
+$colorVeryGood: #01C48D
+$colorExceptional: #01C414
+$colorTextBlue: #3B5773
+
+.ni-signer-credit-score
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+  margin-top: 30px
+  &.very-poor
+    .credit-score-status
+      color: $colorPoor
+  &.fair
+    .credit-score-status
+      color: $colorFair
+  &.good
+    .credit-score-status
+      color: $colorGood
+  &.very-good
+    .credit-score-status
+      color: $colorVeryGood
+  &.exceptional
+    .credit-score-status
+      color: $colorExceptional
+  .title
+    font-size: 12px
+    line-height: 16px
+    font-weight: 700
+    color: $colorTextBlue
+    padding: $padding-xxs 0
+  .credit-score-status
+    @include font-size(32px, 30px)
+  .processing 
+    @include font-size(12px, 16px)
+    color: $lightGray
+
+    

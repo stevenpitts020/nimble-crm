@@ -1,0 +1,61 @@
+// stat card in dashboard
+
+.ni-stat-numbers
+  @include auto-grid($size: 180px, $gap: 0px)
+  grid-row-gap: 32px
+  margin-bottom: $padding-xl
+
+  @include from--tablet
+    @include grid-repeat(3, $min: 180px, $max: 1fr)
+
+  @include from--desktop
+    @include grid-repeat(auto-fit, $min: 180px, $max: 1fr)
+
+  .ni-stat-number
+    padding: $padding-md $padding-md
+
+    @include from--laptop
+      padding: $padding-lg $padding-lg - 2
+
+    &:not(:last-child)
+      border-right: 1px solid rgba(0, 0, 0, 0.05)
+
+    // note: there was no way to suply custom classes
+    .anticon
+      font-size: 10px
+
+    .ant-statistic-title
+      @include font-size(12px, 16px)
+      text-transform: uppercase
+      font-weight: 600
+      letter-spacing: 0.05em
+      margin-bottom: $padding-xs
+
+    .ant-statistic-content
+      @include flexbox()
+      flex-flow: row wrap
+      justify-content: flex-start
+
+    .ant-statistic-content-value
+      @include font-size(48px, 48px)
+      font-weight: 700
+
+    .ant-statistic-content-prefix
+      @include font-size(24px, 24px)
+      color: $text-color-secondary
+      font-weight: 300
+      vertical-align: top
+
+    .ant-statistic-content-suffix
+      @include font-size(13px, 16px)
+      font-weight: 600
+      margin-left: auto
+
+    &--growth--up
+      color: $success-color
+      span
+        color: $success-color
+    &--growth--down
+      color: $error-color !important
+      span
+        color: $error-color !important

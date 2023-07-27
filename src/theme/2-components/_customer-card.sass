@@ -1,0 +1,75 @@
+.ni-customer-cards
+  margin-bottom: 32px
+  @include auto-grid($size: 252px, $gap: 32px)
+
+  @include from--desktop
+    @include auto-grid($size: 252px, $gap: 32px, $fill-type: auto-fit)
+
+  .ni-customer-card
+    background: $light
+    border-radius: $card-radius
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.05)
+
+    &--meta
+      // we want to swap positions and adjust font
+      @include flexAlignCenter
+      @include flex-flow(nowrap)
+
+      .ant-card-meta-avatar
+        order: 2
+        padding-right: 0
+        margin-left: auto
+
+      .ant-card-meta-detail
+        display: flex
+        flex-direction: column
+        .ant-card-meta-title
+          @include font-size(20px, 24px)
+          font-weight: 700
+          order: 2
+        .ant-card-meta-description
+          @include font-size(14px, 17px)
+          font-weight: 500
+          order: 1
+
+
+    &--info
+      padding-top: 36px
+      clear: both
+
+      &--description
+        // we need a little padding to accomodate the bg effect
+        padding-left: 28px
+        padding-top: 18px
+        // style for text inside
+        span
+          display: block
+          @include font-size(16px, 19px)
+          font-weight: 700
+
+          &.ant-typography-secondary
+            @include font-size(14px, 16px)
+            font-weight: 400
+            padding-bottom: 2px
+
+          &.small
+            font-weight: 400
+            @include font-size(13px, 15px)
+            padding-top: 2px
+
+        // background effect
+        &--effect
+          position: absolute
+          left: 0
+          top: 0
+          width: 60px
+          height: 60px
+          background: $veryLightGray
+          opacity: 0.18
+          border-radius: 12px
+          z-index: 0
+      //the arrow icon color, could probably pass this on the code though
+      &--arrow
+        svg
+          color: $lightGray
+          font-size: 24px

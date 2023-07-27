@@ -1,0 +1,44 @@
+
+.ni-stack
+  display: flex
+
+  &.direction-horizontal
+    flex-direction: row
+
+    &.spacing-none
+      margin-right: 0
+
+    @each $name, $size in $sizes
+      &.spacing-#{$name} > *
+        margin-right: $size
+
+    > *:last-child
+      margin-right: 0
+
+  &.direction-vertical
+    flex: 1 1 auto
+    flex-direction: column
+
+    &.spacing-none
+      margin-bottom: 0
+    @each $name, $size in $sizes
+      &.spacing-#{$name} > *
+        margin-bottom: $size
+
+    > *:last-child
+      margin-bottom: 0
+
+  &.collapse-sm
+    @include for--phone-only
+      flex-direction: column
+      > *
+        margin-bottom: 0 !important
+        margin-right: 0 !important
+
+  &.collapse-md
+    @include to--tablet
+      flex-direction: column
+      > *
+        margin-bottom: 0 !important
+        margin-right: 0 !important
+

@@ -1,0 +1,36 @@
+
+.ni-todolist
+  margin-bottom: 32px
+  &--title.ant-typography
+    color: $fiftyShadesGray
+    font-weight: 600
+    @include font-size(14px, 17px)
+
+  // header and footer spacing
+  .ant-list-header,
+  .ant-list-footer
+    padding-top: 8px
+    padding-bottom: 8px
+
+  // separator color
+  .ant-list-split .ant-list-item
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+
+  // padding for each item
+  .ant-list-item
+    padding: 15px 0
+
+    // adjust color and alignment for inside content
+    .ant-list-item-meta-content
+      @include flexAlignCenter
+
+    .ant-list-item-meta-title
+      font-weight: bold
+      margin-bottom: 0
+    .ant-list-item-meta-description
+      @include font-size(13px, 16px)
+      color: $fiftyShadesGray
+
+  .ant-radio-wrapper.ant-radio-wrapper-checked
+    .ant-list-item-meta-title
+      text-decoration: line-through

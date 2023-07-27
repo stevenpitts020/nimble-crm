@@ -1,0 +1,110 @@
+.ni-compliance-header
+  .ni-compliance-back
+    width: 52px
+    height: 52px
+    background: #A5B1BD
+    .anticon
+      font-size: 24px
+      height: 24px
+
+
+// Unique Tabs for the modal window
+
+.ant-tabs.ni-tabs.ant-tabs-card
+  margin-left: -64px
+  margin-right: -64px
+
+  .ant-tabs-nav
+    background: linear-gradient(360deg, #F7F9FD 0%, rgba(247, 249, 253, 0) 100%)
+    padding-top: 45px
+
+    // arrows in mobile
+    .ant-tabs-tab-prev.ant-tabs-tab-arrow-show,
+    .ant-tabs-tab-next.ant-tabs-tab-arrow-show
+      width: 32px
+      height: 40%
+
+    .ant-tabs-tab-prev
+      left: 30px
+    .ant-tabs-tab-next
+      right: 50px
+
+    .ant-tabs-nav-wrap
+      padding-left: 64px
+      padding-right: 64px
+      // border-bottom: 1px solid #E5E9F2
+
+    .ant-tabs-tab
+      background: transparent
+      border: 0px solid transparent
+      padding: 20px 44px
+      text-align: center
+      margin-top: 10px
+
+      .ant-tabs-tab-btn
+        color: #6F7C88
+        font-size: 14px
+        line-height: 16px
+        font-weight: bold
+        small
+          color: #A5B1BD
+
+    .ant-tabs-tab-active
+      border-radius: 8px 8px 0px 0px
+      border: 1px solid #E5E9F2
+      background: #ffffff
+      border-bottom: 1px solid #ffffff
+      box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.08), 0px 0px 0px 1px #E5E9F2
+
+      .ant-tabs-tab-btn
+        color: #FA9802
+
+    .ant-tabs-tab-disabled
+      .ant-tabs-tab-btn
+        color: lighten(#A5B1BD, 0.6)
+
+
+  .ant-tabs-content-holder
+    padding-left: 64px
+    padding-right: 64px
+
+
+// collapse inside the compliance results items
+.ni-media-result.ant-collapse
+  background-color: #fff
+
+  .ant-collapse-header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: flex-start
+    border: 0px solid transparent !important
+    padding: 0 !important
+
+    .ant-collapse-extra
+      margin-right: 80px
+      margin-top: 9px
+
+    .ant-collapse-arrow
+      top: 24% !important
+      right: 0 !important
+      svg
+        font-size: 9px
+        margin-right: 10px
+        color: #6F7C88
+      &:after
+        content: 'Details'
+        color: #6F7C88
+        font-size: 12px
+        line-height: 24px
+        font-weight: bold
+
+
+  .ant-collapse-content-box
+    padding: 0 !important
+
+  .ant-collapse-item
+    border: 0px solid transparent !important
+
+  .ni-title
+    flex: 1

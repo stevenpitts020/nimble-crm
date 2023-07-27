@@ -1,0 +1,15 @@
+.git
+.gitignore
+.github
+.gitlab
+build
+README.md
+docker-compose.yml
+docker-compose.*.yml
+node_modules
+npm-debug.log
+.editorconfig
+.nvmrc
+coverage
+build
+junit.xml
